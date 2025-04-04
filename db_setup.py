@@ -8,7 +8,7 @@ each job we scrap
 import os
 import psycopg2
 from dotenv import load_dotenv
-from psycopg2 import OperationalError, Error
+
 
 load_dotenv()
 
@@ -23,7 +23,7 @@ def get_connection():
             password=os.getenv("DB_PASSWORD"),
             host=os.getenv("DB_HOST"),
         )
-    except OperationalError as e:
+    except psycopg2.OperationalError as e:
         print("Could not connect to the database.")
         print("Error:", e)
         return None
@@ -51,6 +51,6 @@ def create_table():
                     );
                 """)
         print("Table 'jobs' has been created successfully.")
-    except Error as e:
+    except psycopg2.Error as e:
         print("Failed to create table.")
         print("Error:", e)
