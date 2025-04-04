@@ -16,3 +16,24 @@ A command-line application that scrapes job listings from [Indeed.com](https://w
   - Limit on results
 
 ---
+
+## 📦 Dependencies 
+
+- requests
+- beautifulsoup4
+- psycopg2
+- python-dotenv
+- pandas
+
+
+## 🚀 Usage
+
+## 🔐 Environment Variables
+
+Create a .env file in the project root with the following content:
+
+- DB_NAME=your_db_name
+- DB_USER=your_db_user
+- DB_PASSWORD=your_db_password
+- DB_HOST=localhost
+- DB_PORT=5432
